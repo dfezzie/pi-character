@@ -12,10 +12,10 @@ no custom Pi build or additional runtime dependencies are needed.
 
 ## Quick start
 
-Install from a local checkout using its absolute path:
+Install the published package from npm:
 
 ```sh
-pi install /path/to/pi-character
+pi install npm:pi-character
 ```
 
 Restart Pi or run `/reload`. **Cray the Crawfish** appears alongside Pi's original startup header.
@@ -28,9 +28,6 @@ Open the character menu:
 
 Choose **Choose character**, then use **↑ / ↓** to preview the animations. Press **Enter** to save
 your choice, or **Escape** to return to your previous character.
-
-The package is not published to npm yet. Once published, installation will be
-`pi install npm:pi-character`.
 
 ## Meet the characters
 
@@ -153,10 +150,8 @@ out of the picker across restarts, including bundled presets.
 
 ## Uninstall
 
-For an installation from a local checkout:
-
 ```sh
-pi remove /path/to/pi-character
+pi remove npm:pi-character
 ```
 
 Your saved characters and preferences remain. To reset them as well, separately delete the
@@ -171,14 +166,21 @@ npm ci --legacy-peer-deps
 npm run build
 ```
 
-To load the checkout for a single Pi session before installing it:
+To load the checkout for a single Pi session:
 
 ```sh
 pi -e /path/to/pi-character
 ```
 
-Pass the package directory so Pi reads its manifest and loads only `src/index.ts`. Avoid loading
-the same package through both an installation and `-e`.
+To install a local checkout instead, use its absolute path:
+
+```sh
+pi install /path/to/pi-character
+```
+
+Remove a local installation with `pi remove /path/to/pi-character`. Pass the package directory so
+Pi reads its manifest and loads only `src/index.ts`. Use one loading method at a time: npm, local
+installation, or `-e`.
 
 ### Project layout
 
