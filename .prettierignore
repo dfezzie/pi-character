@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+generated/
+validation/
+*.tgz
+*.log
+pi-*.txt

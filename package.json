@@ -1,0 +1,67 @@
+{
+  "name": "pi-character",
+  "version": "0.1.0",
+  "description": "Animated ASCII companions for your Pi terminal. Pick a bundled character or generate your own.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Dominic Fezzie",
+  "files": [
+    "src/",
+    "assets/",
+    "docs/media/"
+  ],
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "keywords": [
+    "pi-package"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ],
+    "video": "https://github.com/dfezzie/pi-character/raw/refs/heads/main/docs/media/demo.mp4",
+    "image": "https://github.com/dfezzie/pi-character/raw/refs/heads/main/docs/media/demo.png"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run format:check && npm run typecheck",
+    "build": "npm run check && npm test",
+    "prepack": "npm run build",
+    "test": "node --test test/*.test.ts",
+    "test:smoke": "node test/smoke.ts --source"
+  },
+  "overrides": {
+    "@earendil-works/pi-coding-agent": {
+      "undici": "^8.12.2"
+    }
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^1.4.0",
+    "@earendil-works/pi-tui": "^1.4.0",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.5",
+    "@xterm/headless": "^6.0.0",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.13.0",
+    "jiti": "^2.7.0",
+    "node-pty": "^1.1.0",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfezzie/pi-character.git"
+  },
+  "homepage": "https://github.com/dfezzie/pi-character#readme",
+  "bugs": {
+    "url": "https://github.com/dfezzie/pi-character/issues"
+  }
+}
