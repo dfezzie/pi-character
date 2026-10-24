@@ -2,9 +2,7 @@
 
 Animated ASCII companions for your Pi terminal. Pick a bundled character or generate your own.
 
-[![Pi character demo: Cray at startup, live character previews, and a saved character in pink.](https://github.com/dfezzie/pi-character/raw/refs/heads/main/docs/media/demo.gif)](https://github.com/dfezzie/pi-character/raw/refs/heads/main/docs/media/demo.mp4)
-
-[Watch the 18-second demo (MP4)](https://github.com/dfezzie/pi-character/raw/refs/heads/main/docs/media/demo.mp4) · [Still preview](https://github.com/dfezzie/pi-character/raw/refs/heads/main/docs/media/demo.png)
+![Pi character demo: Cray at startup, live character previews, and a saved character in pink.](https://github.com/dfezzie/pi-character/raw/refs/heads/main/docs/media/demo.gif)
 
 Captured from a real Pi session: startup, live previews, saving a selection, and changing its color.
 The terminal view is cropped to the character and controls. No model tokens were used.
