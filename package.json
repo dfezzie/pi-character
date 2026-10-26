@@ -1,6 +1,6 @@
 {
   "name": "pi-character",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Animated ASCII companions for your Pi terminal. Pick a bundled character or generate your own.",
   "type": "module",
   "license": "MIT",
