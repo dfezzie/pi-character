@@ -34,7 +34,8 @@
     "build": "npm run check && npm test",
     "prepack": "npm run build",
     "test": "node --test test/*.test.ts",
-    "test:smoke": "node test/smoke.ts --source"
+    "test:smoke": "node test/smoke.ts --source",
+    "release": "node scripts/update-npm.ts"
   },
   "overrides": {
     "@earendil-works/pi-coding-agent": {

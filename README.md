@@ -239,4 +239,32 @@ Run `npm pack --dry-run` or `npm pack` to review release contents. Packing runs 
 the package includes source, presets, demo media, README, and license. Asset paths resolve relative to the
 extension module, so playback works from any working directory.
 
+### Publish an npm update
+
+From the repository checkout, sign in with `npm login` if needed, then run:
+
+```sh
+npm run release
+```
+
+This runs the full build checks, bumps the patch version in `package.json` and
+`package-lock.json`, shows the exact package contents and a publishing dry run, then asks before
+publishing that archive to `https://registry.npmjs.org/`, regardless of your configured registry.
+Complete npm's authentication prompt when requested.
+The default next release from `0.1.0` is `0.1.1`.
+
+```sh
+npm run release -- --dry-run  # Check and preview without bumping or publishing
+npm run release -- minor     # Bump the minor version instead
+npm run release -- major     # Bump the major version instead
+npm run release -- --current # Resume using the version already in package.json
+```
+
+Cancelling or a failure after the bump leaves version changes local. Use `--current` to resume;
+if a publish reports an uncertain result, first check `npm view pi-character@<version> version`
+to see whether npm accepted it. The script never retries publication automatically.
+It does not commit, tag, or push. After a successful release, commit and push the version files.
+Allow npm processing to finish before verifying availability; publishing does not guarantee a
+Pi catalog search refresh.
+
 Licensed under [MIT](LICENSE).
